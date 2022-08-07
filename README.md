@@ -6,7 +6,7 @@ Based on article:
 
 # Running
 ```shell
-$ java -jar ./target/NettySimpleTCPServer-shaed.jar 8080
+$ java -jar ./target/NettySimpleTCPServer-shaded.jar 8080
 ```
 
 # Docker
