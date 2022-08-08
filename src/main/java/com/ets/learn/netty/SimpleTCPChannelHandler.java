@@ -5,6 +5,15 @@ import io.netty.channel.SimpleChannelInboundHandler;
 
 public class SimpleTCPChannelHandler extends SimpleChannelInboundHandler<String> {
 
+    private static int counter = 0;
+
+    private int id;
+    public SimpleTCPChannelHandler(){
+        id = counter;
+        counter++;
+    }
+
+
     @Override
     public void channelActive(ChannelHandlerContext ctx) {
         Utils.log(ctx.channel().remoteAddress(), "Channel Active");
@@ -12,7 +21,7 @@ public class SimpleTCPChannelHandler extends SimpleChannelInboundHandler<String>
 
     @Override
     protected void channelRead0(ChannelHandlerContext ctx, String s) throws Exception {
-        Utils.log(ctx.channel().remoteAddress(), s);
+        Utils.log(id, ctx.channel().remoteAddress(), s);
         ctx.channel().writeAndFlush("Thanks\n");
     }
 

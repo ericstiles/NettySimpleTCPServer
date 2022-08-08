@@ -9,7 +9,8 @@ public class Application {
             System.exit(1);
         }
         try {
-            SimpleNettyServerBootstrap simpleNettyServerBootstrap = new SimpleNettyServerBootstrap();
+
+            SimpleNettyServerBootstrap simpleNettyServerBootstrap = new SimpleNettyServerBootstrap(new SimpleTCPChannelInitializer());
             simpleNettyServerBootstrap.start(Integer.valueOf(args[0]));
         } catch (InterruptedException e) {
             e.printStackTrace();

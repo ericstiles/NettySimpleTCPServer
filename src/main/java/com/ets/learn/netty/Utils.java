@@ -12,5 +12,8 @@ class Utils {
         System.out.println("< " + socketAddress + " > : " + message);
     }
 
+    static void log(int id, SocketAddress socketAddress, String message){
+        System.out.println("id: " + id + " < " + socketAddress + " > : " + message);
+    }
 
 }
