@@ -10,7 +10,7 @@ public class Application {
         }
         try {
 
-            SimpleNettyServerBootstrap simpleNettyServerBootstrap = new SimpleNettyServerBootstrap(new SimpleTCPChannelInitializer());
+            SimpleNettyServerBootstrap simpleNettyServerBootstrap = new SimpleNettyServerBootstrap(new SimpleTCPChannelInitializer(new SimpleTCPChannelHandler()));
             simpleNettyServerBootstrap.start(Integer.valueOf(args[0]));
         } catch (InterruptedException e) {
             e.printStackTrace();
