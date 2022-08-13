@@ -14,6 +14,7 @@
         <maven.compiler.target>17</maven.compiler.target>
         <junit.jupiter.version>5.8.1</junit.jupiter.version>
         <junit.platform.version>1.8.1</junit.platform.version>
+        <dagger.plugin.version>2.43.2</dagger.plugin.version>
     </properties>
     <dependencies>
         <dependency>
@@ -45,6 +46,24 @@
             <artifactId>netty-all</artifactId>
             <version>4.1.79.Final</version>
         </dependency>
+        <dependency>
+            <groupId>com.google.dagger</groupId>
+            <artifactId>dagger</artifactId>
+            <version>${dagger.plugin.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.google.dagger</groupId>
+            <artifactId>dagger-compiler</artifactId>
+            <version>${dagger.plugin.version}</version>
+<!--            <optional>true</optional>-->
+        </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.24</version>
+            <scope>provided</scope>
+        </dependency>
+
     </dependencies>
 
 

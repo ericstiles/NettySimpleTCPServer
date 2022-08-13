@@ -1,13 +1,18 @@
-package com.ets.learn.netty;
+package com.ets.learn.netty.handler;
 
+import com.ets.learn.netty.Utils;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.SimpleChannelInboundHandler;
+
+import javax.inject.Inject;
 
 public class SimpleTCPChannelHandler extends SimpleChannelInboundHandler<String> {
 
     private static int counter = 0;
 
     private int id;
+
+    @Inject
     public SimpleTCPChannelHandler(){
         id = counter;
         counter++;
@@ -20,7 +25,7 @@ public class SimpleTCPChannelHandler extends SimpleChannelInboundHandler<String>
     }
 
     @Override
-    protected void channelRead0(ChannelHandlerContext ctx, String s) throws Exception {
+    public void channelRead0(ChannelHandlerContext ctx, String s) throws Exception {
         Utils.log(id, ctx.channel().remoteAddress(), s);
         ctx.channel().writeAndFlush("Thanks\n");
     }

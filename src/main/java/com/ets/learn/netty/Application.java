@@ -10,7 +10,11 @@ public class Application {
         }
         try {
 
-            SimpleNettyServerBootstrap simpleNettyServerBootstrap = new SimpleNettyServerBootstrap(new SimpleTCPChannelInitializer(new SimpleTCPChannelHandler()));
+
+            NettyComponent n = NettyComponentFactory.build();
+//            n.providesHandlerFactory();
+
+            SimpleNettyServerBootstrap simpleNettyServerBootstrap = new SimpleNettyServerBootstrap(new SimpleTCPChannelInitializer(n.providesHandlerFactory()));
             simpleNettyServerBootstrap.start(Integer.valueOf(args[0]));
         } catch (InterruptedException e) {
             e.printStackTrace();
