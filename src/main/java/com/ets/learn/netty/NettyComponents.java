@@ -1,15 +1,14 @@
 package com.ets.learn.netty;
 
 import com.ets.learn.netty.handler.HandlerFactory;
-import dagger.Binds;
 import dagger.Component;
-import dagger.Provides;
+import io.netty.handler.codec.string.StringDecoder;
 
 import javax.inject.Singleton;
 
 @Singleton
 @Component(modules = NettyModule.class)
-public interface NettyComponent {
+public interface NettyComponents {
 
     HandlerFactory providesHandlerFactory();
 

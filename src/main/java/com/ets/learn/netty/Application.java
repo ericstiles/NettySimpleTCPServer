@@ -11,7 +11,7 @@ public class Application {
         try {
 
 
-            NettyComponent n = NettyComponentFactory.build();
+            NettyComponents n = NettyComponentsFactory.build();
 //            n.providesHandlerFactory();
 
             SimpleNettyServerBootstrap simpleNettyServerBootstrap = new SimpleNettyServerBootstrap(new SimpleTCPChannelInitializer(n.providesHandlerFactory()));
