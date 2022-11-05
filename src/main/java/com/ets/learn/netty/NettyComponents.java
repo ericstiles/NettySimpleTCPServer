@@ -12,4 +12,9 @@ public interface NettyComponents {
 
     HandlerFactory providesHandlerFactory();
 
+//    @Component.Factory
+//    interface Factory {
+//        NettyComponents newNettyComponents(NettyModule nettyModule);
+//    }
+
 }

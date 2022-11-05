@@ -5,5 +5,6 @@ public class NettyComponentsFactory {
 
     public static NettyComponents build(){
         return DaggerNettyComponents.builder().build();
+//        return DaggerNettyComponents.factory().newNettyComponents();
     }
 }

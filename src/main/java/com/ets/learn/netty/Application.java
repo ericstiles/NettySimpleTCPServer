@@ -4,6 +4,13 @@ public class Application {
 
     public static void main(String[] args) {
 
+        Application application = new Application();
+
+//        Throwable throwable = application.returnThrowable();
+//        System.out.println(throwable);
+//        System.out.println(throwable.getCause());
+
+
         if (args.length == 0) {
             System.out.println("Usage: Main [port number]");
             System.exit(1);
@@ -19,6 +26,10 @@ public class Application {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
+    }
+
+    public Throwable returnThrowable(){
+        return new TestThrowable();
     }
 
 }
