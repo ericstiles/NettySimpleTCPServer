@@ -1,6 +1,8 @@
 package com.ets.learn.netty;
 
 import com.ets.learn.netty.handler.SimpleTCPChannelHandler;
+import com.ets.learn.netty.thread.action.factory.AbstractActionsFactory;
+import com.ets.learn.netty.thread.state.State;
 import io.netty.channel.Channel;
 import io.netty.channel.ChannelHandlerContext;
 import org.junit.jupiter.api.AfterEach;
@@ -26,7 +28,7 @@ class SimpleTCPChannelHandlerTest {
 
     @BeforeEach
     void setUp() {
-        simpleTCPChannelHandler = new SimpleTCPChannelHandler();
+        simpleTCPChannelHandler = new SimpleTCPChannelHandler(new State(), new AbstractActionsFactory());
         mockChannelHandlerContext = mock(ChannelHandlerContext.class);
         mockChannel = mock(Channel.class);
 

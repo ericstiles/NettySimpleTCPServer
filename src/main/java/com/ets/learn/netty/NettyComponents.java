@@ -1,8 +1,9 @@
 package com.ets.learn.netty;
 
 import com.ets.learn.netty.handler.HandlerFactory;
+import com.ets.learn.netty.thread.action.factory.AbstractActionsFactory;
+import com.ets.learn.netty.thread.state.State;
 import dagger.Component;
-import io.netty.handler.codec.string.StringDecoder;
 
 import javax.inject.Singleton;
 
@@ -11,6 +12,12 @@ import javax.inject.Singleton;
 public interface NettyComponents {
 
     HandlerFactory providesHandlerFactory();
+
+    @Singleton
+    State providesState();
+
+    @Singleton
+    AbstractActionsFactory providesAbstractActionsFactory();
 
 //    @Component.Factory
 //    interface Factory {

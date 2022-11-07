@@ -21,7 +21,7 @@ public class Application {
             NettyComponents n = NettyComponentsFactory.build();
 //            n.providesHandlerFactory();
 
-            SimpleNettyServerBootstrap simpleNettyServerBootstrap = new SimpleNettyServerBootstrap(new SimpleTCPChannelInitializer(n.providesHandlerFactory()));
+            SimpleNettyServerBootstrap simpleNettyServerBootstrap = new SimpleNettyServerBootstrap(new SimpleTCPChannelInitializer(n.providesHandlerFactory(), n.providesState(), n.providesAbstractActionsFactory()));
             simpleNettyServerBootstrap.start(Integer.valueOf(args[0]));
         } catch (InterruptedException e) {
             e.printStackTrace();
